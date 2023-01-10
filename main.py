@@ -6,8 +6,9 @@ class Letter:
         self.sender = letterFrom
         self.receiver = letterTo
 
-    def createText(self, text):
-        self.line = str(text)
+    ##Intializes the text for the letter
+    def createText(self):
+        self.line = str()
 
     ##adds a line to the letter
     def addLine(self, line):
@@ -15,7 +16,9 @@ class Letter:
 
     ##returns the entire text of the letter
     def getText(self):
+        print("Dear "+self.receiver+": \n")
         print(self.line)
+        print("Sincerely, \n\n"+self.sender+"")
         return
 
 def write():
@@ -24,7 +27,7 @@ def write():
     receiver = input("Receiver of the letter: ")
 
     letter = Letter(sender, receiver)
-    letter.createText("Dear "+receiver+": \n\n")
+    letter.createText()
 
     while True:
         print("Letter Options: \n1. Add a line \n2. View Letter \n3. Finish Writing Letter\n0. Exit")
@@ -40,10 +43,8 @@ def write():
             print("\n")
 
         elif choice == "3":
-            text = "\nSincerely, \n\n"+sender+""
-            letter.addLine(text)
             letter.getText()
-
+            break
         else:
             letter.getText()
             break
