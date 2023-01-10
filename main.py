@@ -1,13 +1,10 @@
 ##A simple program that authors a simple letter for you
 
 class Letter:
-    ##initializes the sender and the receiver of the letter
+    ##initializes the sender, the receiver and the text of the letter
     def __init__(self, letterFrom, letterTo):
         self.sender = letterFrom
         self.receiver = letterTo
-
-    ##Intializes the text for the letter
-    def createText(self):
         self.line = str()
 
     ##adds a line to the letter
@@ -27,7 +24,6 @@ def write():
     receiver = input("Receiver of the letter: ")
 
     letter = Letter(sender, receiver)
-    letter.createText()
 
     while True:
         print("Letter Options: \n1. Add a line \n2. View Letter \n3. Finish Writing Letter\n0. Exit")
